@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormAuth from "../components/FormAuth";
 import ToggleAuth from "../components/ToggleAuth";
+import "../styles/StylesAuth.css";
 
 const PageAuth = () => {
   const [isSign, setIsSign] = useState(false);
