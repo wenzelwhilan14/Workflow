@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormAuth from "../components/FormAuth";
 import ToggleAuth from "../components/ToggleAuth";
 import * as auth from "../services/AuthServices";
-import { traducirError } from "../utils/errorMessages";
+import { traducirError } from "../utils/ErrorMessages";
 import "../styles/StylesAuth.css";
 
 const PageAuth = () => {
