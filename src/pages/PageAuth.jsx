@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FormAuth from "../components/FormAuth";
 import ToggleAuth from "../components/ToggleAuth";
 import * as auth from "../services/AuthServices";
@@ -6,11 +7,25 @@ import { traducirError } from "../utils/ErrorMessages";
 import "../styles/StylesAuth.css";
 
 const PageAuth = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
   const [isSign, setIsSign] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const currentUser = await auth.getUser();
+      setUser(currentUser);
+    };
+    fetchUser();
+  }, []);
+
+  if (user) {
+    navigate("/home", { replace: true });
+  }
 
   const clearForm = () => {
     setEmail("");
@@ -35,6 +50,7 @@ const PageAuth = () => {
       } else {
         await auth.signIn(email, password);
         alert("Inicio de sesión exitoso");
+        navigate("/home", { replace: true });
       }
       clearForm();
     } catch (err) {
