@@ -62,18 +62,20 @@ const PageAuth = () => {
   };
 
   return (
-    <div className={`container ${isSign ? "active" : ""}`}>
-      <FormAuth
-        isSign={isSign}
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        handleSubmit={handleSubmit}
-        error={error}
-        loading={loading}
-      />
-      <ToggleAuth isSign={isSign} handleToggle={handleToggle} />
+    <div className="auth">
+      <div className={`container ${isSign ? "active" : ""}`}>
+        <FormAuth
+          isSign={isSign}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          error={error}
+          loading={loading}
+        />
+        <ToggleAuth isSign={isSign} handleToggle={handleToggle} />
+      </div>
     </div>
   );
 };
