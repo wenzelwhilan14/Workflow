@@ -53,7 +53,6 @@ function CardPunto({
     }
   };
 
-  // Función para eliminar el punto
   const handleDelete = async () => {
     if (window.confirm("¿Seguro que quieres eliminar este punto?")) {
       try {
