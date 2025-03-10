@@ -23,9 +23,11 @@ const PageAuth = () => {
     fetchUser();
   }, []);
 
-  if (user) {
-    navigate("/home", { replace: true });
-  }
+  useEffect(() => {
+    if (user) {
+      navigate("/home", { replace: true });
+    }
+  }, [user, navigate]);
 
   const clearForm = () => {
     setEmail("");
@@ -46,10 +48,8 @@ const PageAuth = () => {
     try {
       if (isSign) {
         await auth.signUp(email, password);
-        alert("Registro exitoso");
       } else {
         await auth.signIn(email, password);
-        alert("Inicio de sesión exitoso");
         navigate("/home", { replace: true });
       }
       clearForm();

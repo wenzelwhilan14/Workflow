@@ -1,14 +1,12 @@
 import Cookies from "js-cookie";
 import { supabase } from "../config/SupabaseClient";
 
-// 🔹 REGISTRAR USUARIO
 export const signUp = async (email, password) => {
   const { data, error } = await supabase.auth.signUp({ email, password });
   if (error) throw error;
   return data;
 };
 
-// 🔹 INICIAR SESIÓN
 export const signIn = async (email, password) => {
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
@@ -23,7 +21,6 @@ export const signIn = async (email, password) => {
   return data;
 };
 
-// 🔹 CERRAR SESIÓN
 export const signOut = async () => {
   const { error } = await supabase.auth.signOut();
   if (error) throw error;
@@ -31,15 +28,12 @@ export const signOut = async () => {
   Cookies.remove("supabase_session");
 };
 
-// 🔹 OBTENER USUARIO ACTUAL
 export const getUser = async () => {
   const sessionFromCookie = Cookies.get("supabase_session");
 
   if (sessionFromCookie) {
-    // Si hay una sesión guardada en la cookie, la devolvemos
     return JSON.parse(sessionFromCookie).user;
   } else {
-    // Si no, obtenemos el usuario actual desde Supabase
     const {
       data: { user },
     } = await supabase.auth.getUser();
