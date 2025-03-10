@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { getUser } from "../services/AuthServices";
 import { updatePunto, deletePunto } from "../services/PuntosServices";
+import { sendSMS, makeCall } from "../services/TwilioServices";
 import { useNavigate } from "react-router-dom";
 
 function CardPunto({
@@ -18,6 +20,43 @@ function CardPunto({
   const [inputCliente, setInputCliente] = useState(cliente);
   const [inputDireccion, setInputDireccion] = useState(direccion);
   const [inputTelefono, setInputTelefono] = useState(telefono);
+  const msg = `Hola ${cliente}, workflow le recuerda que llegaremos pronto al punto de encuentro.`;
+
+  // aqui quiero una funcion para los mensajes
+
+  const hanbleSendSMS = async () => {
+    if (telefono == "51947752835") {
+      console.log("Telefono es igual");
+      const response = await sendSMS(inputTelefono, msg);
+      console.log(response);
+      if (response.success) {
+        alert("mensaje enviado con exito");
+      } else {
+        alert("No pudimos enviar el mensaje");
+      }
+    } else {
+      alert(
+        "Esta es una funcion Premiun, para activarla yapea 5 soles al +51 955332058 y me pondre en contacto con usted"
+      );
+    }
+  };
+
+  const hanbleMakeCall = async () => {
+    if (telefono == "51947752835") {
+      console.log("Telefono es igual");
+      const response = await makeCall(inputTelefono, msg);
+      console.log(response);
+      if (response.success) {
+        alert("llamada realizada con exito");
+      } else {
+        alert("No pudimos realizar la llamada");
+      }
+    } else {
+      alert(
+        "Esta es una funcion Premiun, para activarla yapea 5 soles al +51 955332058 y me pondre en contacto con usted"
+      );
+    }
+  };
 
   const getPuntoName = (index) => {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -94,8 +133,12 @@ function CardPunto({
               />
               {!edicion && (
                 <div className="telefono-buttons">
-                  <button className="btn-call">CALL</button>
-                  <button className="btn-sms">SMS</button>
+                  <button className="btn-call" onClick={hanbleMakeCall}>
+                    CALL
+                  </button>
+                  <button className="btn-sms" onClick={hanbleSendSMS}>
+                    SMS
+                  </button>
                 </div>
               )}
             </div>

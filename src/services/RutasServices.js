@@ -1,9 +1,26 @@
 import { supabase } from "../config/SupabaseClient";
+import { getUser } from "./AuthServices";
 
 export const getRutas = async () => {
-  const { data, error } = await supabase.from("rutas").select("*");
-  if (error) throw error;
-  return data;
+  try {
+    const user = await getUser();
+
+    if (!user || !user.id) {
+      throw new Error("No se encontró un usuario autenticado.");
+    }
+
+    const { data, error } = await supabase
+      .from("rutas")
+      .select("*")
+      .eq("user", user.id);
+
+    if (error) throw error;
+
+    return data;
+  } catch (error) {
+    console.error("Error obteniendo rutas:", error);
+    return null;
+  }
 };
 
 export const getRutaById = async (id_ruta) => {
@@ -17,13 +34,26 @@ export const getRutaById = async (id_ruta) => {
 };
 
 export const createRuta = async (nombre_ruta) => {
-  const { data, error } = await supabase
-    .from("rutas")
-    .insert([{ nombre_ruta }])
-    .select()
-    .single();
-  if (error) throw error;
-  return data;
+  try {
+    const user = await getUser();
+
+    if (!user || !user.id) {
+      throw new Error("No se encontró un usuario autenticado.");
+    }
+
+    const { data, error } = await supabase
+      .from("rutas")
+      .insert([{ nombre_ruta, user: user.id }]) // Agregar usuario
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    return data;
+  } catch (error) {
+    console.error("Error al crear la ruta:", error);
+    return null;
+  }
 };
 
 export const updateRuta = async (id_ruta, nombre_ruta) => {
