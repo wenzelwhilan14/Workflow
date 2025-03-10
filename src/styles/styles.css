@@ -11,3 +11,56 @@ body {
   background-color: #c9d6ff;
   background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
+
+.content {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.narvar {
+  position: fixed;
+  background-color: #2950cf;
+  background: linear-gradient(to right, #4c6cd4, #2950cf);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  z-index: 1000;
+}
+
+.narvar button {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  width: auto;
+  height: 30px;
+  color: white;
+  background-color: rgb(168, 56, 56);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.narvar button:hover {
+  color: black;
+  background-color: white;
+  transform: scale(1.1);
+}
+
+.narvar p {
+  margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 0px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
