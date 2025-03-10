@@ -2,6 +2,7 @@ import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import { getUser } from "../services/AuthServices";
 import { useEffect, useState } from "react";
 import PageHome from "../pages/PageHome";
+import PageRuta from "../pages/PageRuta";
 
 const PrivateRoutes = () => {
   const [user, setUser] = useState(null);
@@ -23,6 +24,7 @@ const PrivateRoutes = () => {
     <Routes>
       <Route path="/" element={<Outlet />}>
         <Route index element={<PageHome />} />
+        <Route path="ruta/:id" element={<PageRuta />} />
       </Route>
     </Routes>
   ) : (
