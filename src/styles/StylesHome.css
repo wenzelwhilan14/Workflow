@@ -1,0 +1,243 @@
+.narvar {
+  position: fixed;
+  background-color: #2950cf;
+  background: linear-gradient(to right, #4c6cd4, #2950cf);
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.narvar button {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  width: auto;
+  height: 30px;
+  color: white;
+  background-color: rgb(168, 56, 56);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.narvar button:hover {
+  color: black;
+  background-color: white;
+  transform: scale(1.1);
+}
+
+.narvar p {
+  margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 0px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-ruta {
+  background-color: #2950cf;
+  background: linear-gradient(to right, #4c6cd4, #2950cf);
+  width: 800px;
+  height: 110px;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 30px;
+}
+
+.form-ruta p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+
+.form-ruta form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+.form-ruta label {
+  color: white;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 450;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.form-ruta input {
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.form-ruta button {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  height: 30px;
+  width: 20%;
+  color: white;
+  background-color: rgb(38, 175, 38);
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-ruta button:hover {
+  color: black;
+  background-color: white;
+  transform: scale(1.1);
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel-rutas {
+  background-color: #2950cf;
+  background: linear-gradient(to right, #4c6cd4, #2950cf);
+  width: 800px;
+  height: 100%;
+  min-height: 150px;
+  border-radius: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.panel-rutas p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-ruta {
+  background-color: white;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.id-ruta {
+  color: #707070;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.ruta {
+  display: flex;
+}
+.ruta-datos {
+  margin-left: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+}
+
+.ruta-datos label {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 450;
+  margin-right: 10px;
+}
+.ruta-datos input {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-right: 10px;
+  border: none;
+}
+
+.ruta-options button {
+  width: 75px;
+  margin-left: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.ruta-options button:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.1);
+}
+
+.btn-editar {
+  background-color: #2950cf;
+  color: white;
+}
+
+.btn-guardar {
+  background-color: #2950cf;
+  color: white;
+}
+
+.btn-detalles {
+  background-color: #f1ad2f;
+}
+
+.btn-cancelar {
+  background-color: #e94d26;
+  color: white;
+}
+
+.btn-eliminar {
+  background-color: #e94d26;
+  color: white;
+}
+
+.btn-call,
+.btn-sms {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: #2950cf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
