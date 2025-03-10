@@ -1,0 +1,487 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 80%; /* Ajusta el tamaño según necesidad */
+  max-width: 1000px; /* Evita que sea demasiado grande */
+  text-align: left; /* Asegura que el texto del formulario esté alineado a la izquierda */
+}
+
+/* Contenedor principal del formulario */
+.form-punto {
+  display: flex;
+  width: 100%;
+  max-height: 500px;
+  align-items: stretch; /* Hace que ambas columnas tengan la misma altura */
+  justify-content: space-between; /* Distribuye el espacio equitativamente */
+  padding: 20px;
+  gap: 20px;
+  height: 100%;
+}
+
+/* Cada sección ocupará la mitad del espacio */
+.nuevo-punto,
+.mapa-punto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nuevo-punto {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 20px;
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.nuevo-punto p {
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  font-weight: 600;
+}
+
+.nuevo-punto form {
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Para que todos los inputs ocupen el mismo ancho */
+  margin-bottom: 15px; /* Espacio entre cada grupo */
+}
+
+.input-group label {
+  font-weight: 450;
+  margin-bottom: 5px; /* Espacio entre el label y el input */
+}
+
+.input-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Para que todos los inputs tengan el mismo ancho */
+}
+
+.react-tel-input {
+  width: 100% !important;
+}
+
+.react-tel-input .flag-dropdown {
+  border-radius: 4px 0 0 4px !important;
+  border: 1px solid #ccc !important;
+  background: #f8f8f8 !important;
+}
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  height: 38px !important;
+  border-radius: 0 4px 4px 0 !important;
+  padding-left: 50px !important; /* Espacio para la bandera */
+}
+
+/* Asegurar que la dirección y el botón "Comprobar" sigan alineados */
+.direccion-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.direccion-container input {
+  flex: 1; /* Hace que el input ocupe todo el espacio disponible */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.comprobar-btn {
+  text-transform: uppercase;
+  padding: 8px 12px;
+  background-color: #05a771;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.comprobar-btn:hover {
+  background-color: #000000;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Asegura que el mapa no quede pegado al formulario */
+.mapa-punto {
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  border: 2px solid #020202;
+  border-radius: 20px;
+  padding: 20px;
+  height: 100%;
+}
+
+/* Simulación del mapa */
+.maps {
+  width: 100%;
+  height: 100%;
+  background: lightgray;
+  border-radius: 20px;
+}
+
+.opciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-top: auto; /* Empuja los botones hacia abajo */
+}
+
+.opciones button {
+  color: white;
+  font-weight: 500;
+  margin: 10px;
+  width: 40%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.opciones button:hover {
+  background-color: #000000;
+  transform: scale(1.1);
+}
+
+.btn-añadir {
+  background-color: #007bff;
+}
+
+.btn-cancelar {
+  background-color: #e94d26;
+}
+.map {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mapa-ruta {
+  width: 800px;
+  height: 500px;
+  margin: 20px;
+}
+
+.buscar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.barra-buscar {
+  display: flex;
+  background-color: #2950cf;
+  background: linear-gradient(to right, #4c6cd4, #2950cf);
+  width: 800px;
+  height: 75px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.barra-buscar button {
+  font-weight: 500;
+  width: 300px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.barra-buscar button:hover {
+  background-color: #000000;
+  color: white;
+  transform: scale(1.1);
+}
+
+.barra-buscar input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-transform: capitalize;
+}
+
+.btn-ver-rutas {
+  background-color: #ffae19;
+  color: rgb(0, 0, 0);
+}
+
+.btn-buscar-punto {
+  background-color: #a0a0a0;
+  color: white;
+}
+
+.btn-añadir-punto {
+  background-color: #1b9c71;
+  color: white;
+}
+
+.ruta-detalles {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ruta-datos-detalles {
+  margin-top: 20px;
+  background-color: #2950cf;
+  background: linear-gradient(to right, #4c6cd4, #2950cf);
+  width: 800px;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se alineen en columna */
+}
+
+.id-ruta-detalles {
+  width: 100%;
+  color: #dddddd;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.ruta-datos-detalles-id {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ruta-datos-detalles-id label {
+  text-transform: uppercase;
+  font-weight: 550;
+  margin-right: 5px;
+  color: white;
+  padding-right: 15px;
+}
+
+.ruta-datos-detalles-id p {
+  text-transform: uppercase;
+  background-color: white;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.nombre-ruta-detalles {
+  width: 100%;
+}
+
+.puntos-ruta-detalles {
+  width: 50px;
+  text-align: center;
+}
+
+/* Contenedor principal que envuelve todo el contenido de los puntos */
+.puntos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Panel de puntos con un diseño más organizado */
+.puntos-panel {
+  background-color: #2950cf;
+  background: linear-gradient(to right, #4c6cd4, #2950cf);
+  width: 800px;
+  min-height: 150px;
+  border-radius: 15px;
+  padding: 15px 30px; /* Simplificado */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el título del panel */
+.puntos-panel p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px; /* Separación entre el título y los puntos */
+}
+
+/* Tarjetas de puntos dentro del panel */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Contenedor principal de la tarjeta */
+.card-punto {
+  background-color: white;
+  width: 100%;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ID del punto */
+.id-punto {
+  color: #707070;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Contenedor de la información del punto */
+.punto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaciado entre los inputs */
+}
+
+/* Estilo de los campos de texto */
+.punto-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Etiquetas de los inputs */
+.punto-datos label {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 450;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Estilo de los inputs */
+.punto-datos input {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Contenedor del teléfono y los botones CALL y SMS */
+.telefono-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+/* Estilo de los botones CALL y SMS */
+.telefono-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-call,
+.btn-sms {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-call:hover,
+.btn-sms:hover {
+  background-color: #000000;
+  transform: scale(1.05);
+}
+
+/* Opciones de los botones (editar, guardar, eliminar) */
+.punto-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Botones de la parte de opciones */
+.punto-options button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.punto-options button:hover {
+  transform: scale(1.05);
+}
+
+.btn-editar {
+  background-color: #2950cf;
+  color: white;
+}
+
+.btn-guardar {
+  background-color: #2950cf;
+  color: white;
+}
+
+.btn-detalles {
+  background-color: #f1ad2f;
+}
+
+.btn-cancelar {
+  background-color: #e94d26;
+  color: white;
+}
+
+.btn-eliminar {
+  background-color: #e94d26;
+  color: white;
+}
