@@ -58,13 +58,12 @@ function PageRuta() {
   }, [id]);
 
   const handleDelete = (id) => {
-    setPuntos((prevPuntos) =>
+    setOptimizedPoints((prevPuntos) =>
       prevPuntos.filter((punto) => punto.id_punto !== id)
     );
     setOptimizedPoints((prevPuntos) =>
       prevPuntos.filter((punto) => punto.id_punto !== id)
     );
-    window.location.reload();
   };
 
   const handleUpdate = (id, nuevoCliente, nuevaDireccion, nuevoTelefono) => {

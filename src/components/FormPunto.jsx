@@ -84,7 +84,6 @@ function FormPunto({ setShowModal, idRuta, fetchPuntos }) {
 
       await fetchPuntos();
       setShowModal(false);
-      window.location.reload();
     } catch (error) {
       console.error("Error al agregar el punto:", error);
       alert("Error al agregar el punto.");
